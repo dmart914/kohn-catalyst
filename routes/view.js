@@ -217,6 +217,7 @@ router.get('/:id', function(req, res, next) {
     })
     .catch(function(err) {
         console.error(err);
+        res.render('error', {message: err.message, error: err})
     });
 
 });
@@ -290,4 +291,3 @@ function formatStatus(element) {
 }
 
 module.exports = router;
-
